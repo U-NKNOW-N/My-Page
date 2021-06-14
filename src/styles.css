@@ -73,6 +73,7 @@ li {
 
 .h1Clock {
   position: absolute;
+  margin-top: 30px;
 }
 .weather {
   position: absolute;
