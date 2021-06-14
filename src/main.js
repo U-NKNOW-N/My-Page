@@ -43,19 +43,20 @@ function doneFn(text) {
 
 function doneToDo(event) {
   const btn = event.target;
-  const clickLi = btn.parentNode;
+  const clickLi = btn.parentNode.id;
   const clickToDo = toDos.filter(function (toDo) {
-    return toDo.id === parseInt(clickLi.id);
+    return toDo.id === clickLi;
   });
   doneFn(clickToDo);
 }
 
 function deleteToDo(event) {
   const btn = event.target;
-  const removeLi = btn.parentNode;
-  addTask.removeChild(removeLi);
+  const removeLi = btn.parentNode.id;
+  constremoveId = document.getElementById(removeLi);
+  addTask.removeChild(constremoveId);
   const cleanToDos = toDos.filter(function (toDo) {
-    return toDo.id !== parseInt(removeLi.id);
+    return toDo.id !== removeLi;
   });
   toDos = cleanToDos;
   saveToDos();
@@ -70,7 +71,7 @@ function paintToDo(text, check) {
   const delBtn = document.createElement("button");
   const donekBtn = document.createElement("button");
   const span = document.createElement("span");
-  const newId = toDos.length + 1;
+  const newId = text;
   const classCheck = check;
 
   delBtn.innerHTML = "❌";
